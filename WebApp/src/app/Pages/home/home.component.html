@@ -1,0 +1,51 @@
+<mat-card appearance="outlined" style="width: 70%; margin: 50px auto;">
+  <mat-card-header>
+    <mat-card-title>
+      <div style="display: grid; align-items: center;  grid-template-columns: repeat(12, 1fr); gap: 16px;">
+        <div style="grid-column: 1/2;">
+          <p>Customers</p>
+        </div>
+        <div style="grid-column: 6/13;">
+          <mat-form-field style="width: 100%;">
+            <input type="text" matInput (keyup)="filtrar($event)" placeholder="Customer Name">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="customerName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name </th>
+          <td mat-cell *matCellDef="let element" (click)="verDetalle(element)"> {{element.customerName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastOrderDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Order Date </th>
+          <td mat-cell *matCellDef="let element"(click)="verDetalle(element)"> {{element.lastOrderDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nextPredictedOrder">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Next Predicted Order </th>
+          <td mat-cell *matCellDef="let element" (click)="verDetalle(element)"> {{element.nextPredictedOrder}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button style="color: red;" (click)="openDialogView(element)">VIEW ORDERS</button>
+            <button mat-button style="color: green;" (click)="openDialogNew(element)">NEW ORDERS</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

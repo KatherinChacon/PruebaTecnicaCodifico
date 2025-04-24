@@ -1,0 +1,50 @@
+<mat-card appearance="outlined" style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            <p>{{ customerName }} - Orders</p>        
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+    
+                <ng-container matColumnDef="orderid">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Order ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.orderid}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="requireddate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Required Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.requireddate}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="shippeddate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipped Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.shippeddate}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="shipname">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ship Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.shipname}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="shipaddress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ship Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.shipaddress}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="shipcity">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipped City</th>
+                    <td mat-cell *matCellDef="let element"> {{element.shipcity}} </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+    
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+    </mat-card-content>
+    </mat-card>

@@ -1,0 +1,84 @@
+[
+  {
+    "ContainingType": "WebAPI.Controllers.CreateOrders",
+    "Method": "CrearOrder",
+    "RelativePath": "api/CreateOrders/CrearOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPI.Models.NuevaOrdenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.CustomersController",
+    "Method": "GetListaDatePrediction",
+    "RelativePath": "api/Customers/GetListaDatePrediction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.EmployeesController",
+    "Method": "GetListaEmployees",
+    "RelativePath": "api/Employees/GetListaEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.OrdersController",
+    "Method": "GetListaClientOrders",
+    "RelativePath": "api/Orders/GetListaClientOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.OrdersController",
+    "Method": "ListaGetClientOrdersID",
+    "RelativePath": "api/Orders/ListaGetClientOrdersID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.ProductsController",
+    "Method": "GetListaProducts",
+    "RelativePath": "api/Products/GetListaProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.ShippersController",
+    "Method": "GetListaShippers",
+    "RelativePath": "api/Shippers/GetListaShippers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

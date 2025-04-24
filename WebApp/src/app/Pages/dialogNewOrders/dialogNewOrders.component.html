@@ -1,0 +1,79 @@
+<mat-dialog-content>
+  <h3>New Order</h3>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Employee</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.empid" name="empid" placeholder="Employee">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Shipper</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.shipperid" name="shipperid" placeholder="Shipper">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Ship Name</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.shipname" name="shipname" placeholder="Ship Name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Ship Address</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.shipaddress" name="shipaddress" placeholder="Ship Address">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Ship City</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.shipcity" name="shipcity" placeholder="Ship City">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Shipcountry</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.Shipcountry" name="Shipcountry" placeholder="Shipcountry">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Order Date</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.orderdate" type="date" name="orderdate" placeholder="Order Date">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Required Date</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.requireddate" type="date" name="requireddate" placeholder="Required Date">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Shipped Date</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.shippeddate" type="date" name="shippeddate" placeholder="Shipped Date">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Freight</mat-label>
+    <input matInput [(ngModel)]="nuevaOrden.freight" type="number" name="freight" placeholder="Freight">
+  </mat-form-field>
+  
+  <h3>Order Details</h3>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Product</mat-label>
+    <input matInput [(ngModel)]="nuevoDetalle.productid" name="productid">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>$ Unit price</mat-label>
+    <input matInput [(ngModel)]="nuevoDetalle.unitprice" name="unitprice">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Quality</mat-label>
+    <input matInput [(ngModel)]="nuevoDetalle.qty" name="qty">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Discount</mat-label>
+    <input matInput [(ngModel)]="nuevoDetalle.discount" name="discount">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">CLOSE</button>
+  <button mat-raised-button color="primary" (click)="guardar()">SAVE</button>
+</mat-dialog-actions>

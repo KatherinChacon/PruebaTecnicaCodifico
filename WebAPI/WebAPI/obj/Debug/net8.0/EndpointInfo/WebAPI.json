@@ -1,0 +1,207 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WebAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/CreateOrders/CrearOrder": {
+      "post": {
+        "tags": [
+          "CreateOrders"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NuevaOrdenRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NuevaOrdenRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NuevaOrdenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Customers/GetListaDatePrediction": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employees/GetListaEmployees": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Orders/GetListaClientOrders": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Orders/ListaGetClientOrdersID/{id}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Products/GetListaProducts": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Shippers/GetListaShippers": {
+      "get": {
+        "tags": [
+          "Shippers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NuevaOrdenRequest": {
+        "type": "object",
+        "properties": {
+          "orden": {
+            "$ref": "#/components/schemas/Orders"
+          },
+          "detalle": {
+            "$ref": "#/components/schemas/OrderDetails"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDetails": {
+        "type": "object",
+        "properties": {
+          "productid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitprice": {
+            "type": "number",
+            "format": "double"
+          },
+          "qty": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "discount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Orders": {
+        "type": "object",
+        "properties": {
+          "empid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipperid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipname": {
+            "type": "string",
+            "nullable": true
+          },
+          "shipaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "shipcity": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "requireddate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shippeddate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "freight": {
+            "type": "number",
+            "format": "double"
+          },
+          "shipcountry": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
